@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PageController!{% endblock %}
+
+{% block body %}
+
+    <h1>Formulario V3 ✅</h1>
+
+    {# 
+    form(form) 
+    <form action="url">
+        <input type="text">
+        <button>Enviar</button>
+    </form>
+    #}
+
+    {% form_theme form 'bootstrap_5_horizontal_layout.html.twig' %}
+
+    {{ form_start(form, {
+        'method': 'POST',
+        'attr': {'novalidate': 'novalidate'}
+    }) }}
+
+    {{ form_widget(form) }}
+
+    {#
+    {{ form_errors(form) }}
+
+    {{ form_row(form.message, {
+        'label': 'Comentario o sugerencia',
+        'attr': {'maxlength': 10}
+    }) }}
+
+    <div>
+        {{ form_errors(form.email) }}
+        {{ form_row(form.email) }}
+    </div>
+    #}
+
+    {{ form_end(form) }}
+
+{% endblock %}
